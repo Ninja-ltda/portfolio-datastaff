@@ -68,7 +68,7 @@ const PortfolioInterativo = () => {
     },
     {
       title: "Projeto Showcase",
-      url: "https://ce3c855a-6b38-4f85-b089-26396a8f82f0-00-29v19gx1oh9f9.riker.replit.dev/",
+      url: "https://paragem-restaurante--eaeleo.replit.app",
       category: "Demo Técnica",
       tag: "Funcionalidades Avançadas"
     }
