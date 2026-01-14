@@ -298,7 +298,7 @@ const PortfolioInterativo = () => {
       </section>
 
       {/* Stats Section */}
-      <section id="stats" ref={statsRef} className="w-full py-20 px-4 bg-slate-800/30">
+      <section id="stats" ref={statsRef} className="w-full py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             Resultados que Falam
@@ -394,7 +394,7 @@ const PortfolioInterativo = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="w-full py-20 px-4 bg-gradient-to-r from-blue-900/30 to-purple-900/30">
+      <section id="cta" className="w-full py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Pronto Para Decolar?
@@ -465,7 +465,7 @@ const PortfolioInterativo = () => {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-slate-900 py-12 px-4 border-t border-slate-800">
+      <footer className="w-full bg-slate-900/50 py-12 px-4 border-t border-slate-700/30">
         <div className="max-w-7xl mx-auto text-center">
           <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
             Digital Presence
