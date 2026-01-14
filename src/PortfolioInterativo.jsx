@@ -107,9 +107,9 @@ const PortfolioInterativo = () => {
         const progress = currentStep / steps;
 
         setStats({
-          sites: Math.floor(progress * 47),
-          clientes: Math.floor(progress * 38),
-          conversao: Math.floor(progress * 312)
+          sites: Math.floor(progress * 21),
+          clientes: Math.floor(progress * 30),
+          conversao: Math.floor(progress * 230)
         });
 
         if (currentStep >= steps) clearInterval(timer);
@@ -267,7 +267,7 @@ const PortfolioInterativo = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="#portfolio"
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center gap-2 shadow-xl"
+              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center gap-2 shadow-xl text-white hover:text-white"
             >
               Ver Portfolio <ArrowRight size={20} />
             </a>
@@ -474,9 +474,9 @@ const PortfolioInterativo = () => {
             Transformando negócios locais em marcas digitais
           </p>
           <div className="flex justify-center gap-6 text-slate-400">
-            <a href="#" className="hover:text-blue-400 transition">Lisboa</a>
-            <a href="#" className="hover:text-blue-400 transition">Setúbal</a>
-            <a href="#" className="hover:text-blue-400 transition">Portugal</a>
+            <a href="https://www.google.com/maps/search/Lisboa,+Portugal" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">Lisboa</a>
+            <a href="https://www.google.com/maps/search/Setúbal,+Portugal" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">Setúbal</a>
+            <a href="https://www.google.com/maps/search/Portugal" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">Portugal</a>
           </div>
           <p className="mt-8 text-slate-500 text-sm">
             © 2026 Digital Presence. Todos os direitos reservados.
