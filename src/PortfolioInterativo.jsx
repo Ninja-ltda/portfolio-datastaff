@@ -74,22 +74,27 @@ const PortfolioInterativo = () => {
     }
   ];
 
-  // Scroll progress
+  // Scroll progress and stats visibility detection
   useEffect(() => {
     const handleScroll = () => {
+      // Update scroll progress bar
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalScroll) * 100;
+      const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
       setScrollProgress(progress);
 
       // Check if stats section is visible
-      if (statsRef.current) {
+      if (statsRef.current && !statsVisible) {
         const rect = statsRef.current.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0 && !statsVisible) {
+        // Trigger when section is at least 30% visible
+        if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0) {
           setStatsVisible(true);
         }
       }
     };
 
+    // Check on mount in case section is already visible
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [statsVisible]);
@@ -97,22 +102,35 @@ const PortfolioInterativo = () => {
   // Animate stats when visible
   useEffect(() => {
     if (statsVisible) {
-      const duration = 2000;
+      const duration = 2500; // 2.5 seconds for smooth animation
       const steps = 60;
       const interval = duration / steps;
 
       let currentStep = 0;
       const timer = setInterval(() => {
         currentStep++;
-        const progress = currentStep / steps;
+        const progress = Math.min(currentStep / steps, 1);
+        
+        // Use easing function for smoother animation
+        const easeOutQuad = progress < 0.5 
+          ? 2 * progress * progress 
+          : -1 + (4 - 2 * progress) * progress;
 
         setStats({
-          sites: Math.floor(progress * 21),
-          clientes: Math.floor(progress * 30),
-          conversao: Math.floor(progress * 230)
+          sites: Math.floor(easeOutQuad * 21),
+          clientes: Math.floor(easeOutQuad * 30),
+          conversao: Math.floor(easeOutQuad * 230)
         });
 
-        if (currentStep >= steps) clearInterval(timer);
+        if (currentStep >= steps) {
+          clearInterval(timer);
+          // Ensure final values are set exactly
+          setStats({
+            sites: 21,
+            clientes: 30,
+            conversao: 230
+          });
+        }
       }, interval);
 
       return () => clearInterval(timer);
