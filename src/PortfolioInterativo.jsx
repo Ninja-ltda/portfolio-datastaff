@@ -82,17 +82,15 @@ const PortfolioInterativo = () => {
       setScrollProgress(progress);
 
       // Check if stats section is visible
-      if (statsRef.current && !statsVisible) {
+      if (statsRef.current) {
         const rect = statsRef.current.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        if (rect.top < window.innerHeight && rect.bottom >= 0 && !statsVisible) {
           setStatsVisible(true);
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Check on load if stats section is already visible
-    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [statsVisible]);
 
@@ -408,7 +406,7 @@ const PortfolioInterativo = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a 
-              href="https://wa.me/+351932763918"
+              href="https://wa.me/351YOUR_NUMBER"
               className="px-8 py-4 bg-green-600 rounded-lg font-semibold hover:bg-green-700 transition flex items-center gap-2 shadow-xl"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -417,7 +415,7 @@ const PortfolioInterativo = () => {
               WhatsApp
             </a>
             <a 
-              href="mailto:data.staff.ads@gmail.com"
+              href="mailto:contato@seuemail.com"
               className="px-8 py-4 bg-slate-800 rounded-lg font-semibold hover:bg-slate-700 transition border border-slate-600"
             >
               Email
