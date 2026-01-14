@@ -82,15 +82,17 @@ const PortfolioInterativo = () => {
       setScrollProgress(progress);
 
       // Check if stats section is visible
-      if (statsRef.current) {
+      if (statsRef.current && !statsVisible) {
         const rect = statsRef.current.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0 && !statsVisible) {
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
           setStatsVisible(true);
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Check on load if stats section is already visible
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [statsVisible]);
 
