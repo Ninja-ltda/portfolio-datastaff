@@ -4,8 +4,8 @@ Site portfolio profissional criado com React + Vite + Tailwind CSS.
 
 ## Personalizações Implementadas ✓
 
-- ✓ WhatsApp: +351932763918 (linha 28)
-- ✓ Email: data.staff.ads@gmail.com (linha 29)
+- ✓ WhatsApp:
+- ✓ Email:
 - ✓ Estatísticas atualizadas: 32+ sites, 21+ clientes, 230% conversão (linhas 33-38)
 - ✓ Google Maps links no footer para Lisboa, Setúbal e Portugal (footer)
 
